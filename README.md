@@ -6,6 +6,6 @@ Thomas Schelling, in 1971, showed that a small preference for one's neighbors to
 For more information on Schelling's segregation model, please see:
 Schelling, Thomas C. 1971. "Dynamic Models of Segregation." Journal of Mathematical Sociology 1:143-186. 
 
-Sample simulation result for 50 % happines threshold:
+Sample simulation result for 50 % happines threshold and time steps 0, 4, 30:
 
 ![alt tag](https://raw.github.com/b3rnoulli/schelling/master/sample simulation.png)
