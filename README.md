@@ -8,4 +8,4 @@ Schelling, Thomas C. 1971. "Dynamic Models of Segregation." Journal of Mathemati
 
 Sample simulation result for 50 % happines threshold and time steps 0, 4, 30:
 
-![alt tag](https://raw.github.com/b3rnoulli/schelling/master/sample simulation.png)
+![alt tag](https://raw.github.com/b3rnoulli/schelling/master/sample%20simulation.png)
