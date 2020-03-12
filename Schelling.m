@@ -34,9 +34,9 @@ classdef Schelling
             count_different = 0;
             neighbours_index = obj.get_neighbours_index(x,y);
             for i=1:1:length(neighbours_index)
-                if current_agent == obj.agents(neighbours_index(i));
+                if current_agent == obj.agents(neighbours_index(i))
                     count_similar = count_similar+1;
-                else
+                elseif  current_agent == -obj.agents(neighbours_index(i))
                     count_different = count_different+1;
                 end
             end
@@ -50,12 +50,14 @@ classdef Schelling
         function update(obj)
             agent_matrix = zeros(obj.width,obj.height,obj.n_iterations);
             agent_matrix(:,:,1) = obj.agents(:,:);
+            
+            
             for i=2:1:obj.n_iterations
                 n_changes = 0;
                 for j = 1:1:obj.width*obj.height
                     [x,y] = ind2sub([obj.width, obj.height],j);
                     if obj.agents(x,y) == 0
-                       continue; 
+                        continue;
                     end
                     if is_unsatisfied(obj,x,y) ~= 0
                         obj = move_to_empty(obj,x,y);
@@ -87,10 +89,9 @@ classdef Schelling
             obj.agents(x,y) = 0;
         end
         
-        %Moore neighbourhood
+        %vonveuman neighbourhood
         function [indexes] = get_neighbours_index(obj, x, y)
             indexes = [];
-            
             if x>1
                 indexes = [ indexes sub2ind([obj.width, obj.height],x-1, y)];
                 if y>1
